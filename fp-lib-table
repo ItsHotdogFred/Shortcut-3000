@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Shortcut-3000")(type "KiCad")(uri "${KIPRJMOD}/Shortcut-3000.pretty")(options "")(descr "Project footprints"))
+)
