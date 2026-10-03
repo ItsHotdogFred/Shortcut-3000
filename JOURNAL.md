@@ -22,3 +22,5 @@ The module sizes are based on the size and spacing of Cherry MX switches, since 
 I have finished making the pcb. It doesn't have the best routing but in theory it should work. I also choose the sizes for each module. After this it's time to start creating each module
 
 <img width="1096" height="849" alt="image" src="https://github.com/user-attachments/assets/e9245a7d-77a5-44c3-990f-565b5b9df205" />
+
+**Total time spent: 2 hours**
