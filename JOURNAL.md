@@ -59,4 +59,4 @@ This module is basically a blank protoboard with 54 holes, made so if I get any 
 <img width="1568" height="1176" alt="image" src="https://github.com/user-attachments/assets/78d6d539-9fce-47fb-8201-9b56538fcb7e" />
 
 
-**Total time spent 5 hours **
+**Total time spent 5 hours**
