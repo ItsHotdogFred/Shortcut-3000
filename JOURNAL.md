@@ -17,10 +17,35 @@ The module sizes are based on the size and spacing of Cherry MX switches, since 
 
 **Total time spent: 4 hours**
 
-# October 3: Designed the schematic
+# October 3: Designed the pcb
 
 I have finished making the pcb. It doesn't have the best routing but in theory it should work. I also choose the sizes for each module. After this it's time to start creating each module
 
 <img width="1096" height="849" alt="image" src="https://github.com/user-attachments/assets/e9245a7d-77a5-44c3-990f-565b5b9df205" />
 
 **Total time spent: 2 hours**
+
+# October 15: Designed the modules
+I have created 6 modules each one being unique and having their own purpose. Each module has a EEPROM for storing an UUID. This helps store specific settings for each module so moving it around the board doesn't cause any issues. I also made each module have its own int line as there were lots of spare gpio pins so it didn't make sense to not use them. This should result in less unnecessary reads and the ability to convert the int line into a direct line to the MCU (very helpful for RGB daisy chaining) Here is some info about each module:  
+
+# 5 MX Switch Module
+
+This module holds 5 Cherry MX switches, which makes it the main module for shortcuts and macros. Its pretty generic but very important for a device designed about being a shortcut to common things.
+
+# Rotary Encoder Module
+
+This module has a rotary encoder with a push button, which works well for volume, scrolling, or scrubbing through a timeline. I also prevented debouncing from happening which is more reliable then doing it on the software side.
+
+# Screen Module
+
+This module has a small 0.66" 64x48 OLED display that runs straight off the I2C bus. You can use it to show your current layer, what each key does, or stats like volume and time. It’s one of the simplest modules since the screen only needs power and the two I2C lines from the pogo connector.
+
+# RGB Daisy Chain Module
+
+This module has 20 tiny WS2812B-2020 addressable LEDs chained together, so each one can be set to its own color. It adds lighting effects to the device, and it can also show status, like flashing when a shortcut runs. The LEDs are daisy chained, so a single data line controls all of them (replaces the int line)
+
+# Protoboard Module
+
+This module is basically a blank protoboard with 54 holes, made so if I get any ideas after this I am able to prototype them without having to wait for shipping.
+
+**Total time spent 5 hours **
