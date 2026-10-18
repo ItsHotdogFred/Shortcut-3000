@@ -1,5 +1,3 @@
-import time
-
 import board
 import busio
 
@@ -11,10 +9,13 @@ import keypad
 import neopixel
 import usb_hid
 from adafruit_bus_device.i2c_device import I2CDevice
+from adafruit_hid.consumer_control import ConsumerControl
+from adafruit_hid.consumer_control_code import ConsumerControlCode
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
 
 kbd = Keyboard(usb_hid.devices)
+cc = ConsumerControl(usb_hid.devices)  # media keys (volume, mute)
 
 def i2c_read(bus, addr, reg, length=1):
     buf = bytearray(length)
@@ -96,7 +97,7 @@ def controlRotary(bus, slot):
         rotary_state[slot] = {"ab": ab, "count": 0, "button": button}
         return
 
-    # key_values: [CW, CCW, button]; 0x00/0xFF means unassigned
+    # key_values: [CW, CCW, button] as ConsumerControlCodes; 0x00/0xFF means unassigned
     key_values = read_eeprom(bus, 8, 3)
 
     state["count"] += ENC_TABLE[(state["ab"] << 2) | ab]
@@ -105,18 +106,18 @@ def controlRotary(bus, slot):
     # is 4 transitions, so accept >= 2 to tolerate missed samples over I2C
     if ab == 0b11:
         if state["count"] >= 2 and key_values[0] not in (0x00, 0xFF):
-            kbd.send(key_values[0])
+            cc.send(key_values[0])
         elif state["count"] <= -2 and key_values[1] not in (0x00, 0xFF):
-            kbd.send(key_values[1])
+            cc.send(key_values[1])
         state["count"] = 0
 
     if button != state["button"]:
         state["button"] = button
         if key_values[2] not in (0x00, 0xFF):
             if button:
-                kbd.press(key_values[2])
+                cc.press(key_values[2])
             else:
-                kbd.release(key_values[2])
+                cc.release()
 
 def read_mcp_pins(bus):
     return i2c_read(bus, 0x20, 0x09)[0]  # GPIO register
@@ -146,20 +147,31 @@ def select_channel(bus, ch):
     i2c_write(bus, 0x70, bytes([1 << ch]))
 
 
+def read_module_id(bus, ch):
+    # Returns the module type ("1".."5"), or None for an empty slot / blank or unknown EEPROM
+    try:
+        select_channel(bus, ch)
+        decoded = read_eeprom(bus, 0, 1).decode()
+    except (OSError, UnicodeError):
+        return None
+    return decoded if decoded in Modules else None
+
+
 def read_module(int):
     module = GPIO2Module[list(GPIO2Module)[int]]
     loc = ModuleLocations[module]
     i2c = loc["BUS"]
-    select_channel(i2c, loc["CH"])
-    eeprom_data = read_eeprom(i2c, 0, 1)
-    decoded = eeprom_data.decode()
-    print(decoded)
-    if decoded == "2":
-        write_eeprom(i2c, bytes([Keycode.A, Keycode.B,Keycode.C,Keycode.D,Keycode.E]) ,8)
-        control5MXSwitch(i2c)
-    elif decoded == "1":
-        write_eeprom(i2c, bytes([0xA5, 0xA6, 0x7F]) ,8)
-        controlRotary(i2c, module)
+    decoded = read_module_id(i2c, loc["CH"])
+    print(module, decoded)
+    try:
+        if decoded == "2":
+            write_eeprom(i2c, bytes([Keycode.A, Keycode.B,Keycode.C,Keycode.D,Keycode.E]) ,8)
+            control5MXSwitch(i2c)
+        elif decoded == "1":
+            write_eeprom(i2c, bytes([ConsumerControlCode.VOLUME_INCREMENT, ConsumerControlCode.VOLUME_DECREMENT, ConsumerControlCode.MUTE]) ,8)
+            controlRotary(i2c, module)
+    except OSError as e:
+        print("I2C error on", module, e)
 
 def read_eeprom(bus, start=0, length=8):
     return i2c_read(bus, 0x51, start, length)
@@ -175,14 +187,18 @@ def setup_mcp(bus):
 def startup():
     global ints
     for module, loc in ModuleLocations.items():
-        select_channel(loc["BUS"], loc["CH"])
-        eeprom_data = read_eeprom(loc["BUS"], 0, 1)
-        decoded = eeprom_data.decode()
-        print(decoded)
-        if Modules[decoded]["MCP"] == True:
-            setup_mcp(loc["BUS"])
-        if decoded == "5":
-            controlScreen(loc["BUS"])
+        decoded = read_module_id(loc["BUS"], loc["CH"])
+        print(module, decoded)
+        if decoded is None:
+            continue  # empty slot or blank/unknown EEPROM
+        try:
+            if Modules[decoded]["MCP"] == True:
+                setup_mcp(loc["BUS"])
+            if decoded == "5":
+                controlScreen(loc["BUS"])
+        except OSError as e:
+            print("I2C error on", module, e)
+            continue
         if decoded == "4":
             # RGB slot: free its INT pin from keypad so it can drive the LEDs
             gpio = next(pin for pin, name in GPIO2Module.items() if name == module)
