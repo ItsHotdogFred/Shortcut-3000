@@ -60,3 +60,14 @@ This module is basically a blank protoboard with 54 holes, made so if I get any 
 
 
 **Total time spent: 5 hours**
+
+# October 18: Created some demo firmware
+
+I created some demo firmware which supports the 5 different modules I made. I thought hackatime was setup with my editor but it wasn't so hakatime didn't record my hours which sucks but its fine.
+
+Heres an image of my code. I mean not sure what else I could show it's firmware.
+<img width="1576" height="1302" alt="image" src="https://github.com/user-attachments/assets/cd836694-7455-46f5-ab37-1b01c9a76098" />
+
+**Total time spent: 2 hours**
+
+
