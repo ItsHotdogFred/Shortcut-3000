@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "MagneticPogo")(type "KiCad")(uri "${KIPRJMOD}/MagneticPogo.pretty")(options "")(descr "Magnetic pogo pin connectors"))
+)

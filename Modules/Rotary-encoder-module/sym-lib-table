@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "MagneticPogo")(type "KiCad")(uri "${KIPRJMOD}/MagneticPogo.kicad_sym")(options "")(descr "Magnetic pogo pin connectors"))
+)

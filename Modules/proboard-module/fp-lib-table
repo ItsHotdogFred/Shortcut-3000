@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "MagneticPogo")(type "KiCad")(uri "${KIPRJMOD}/MagneticPogo.pretty")(options "")(descr "Magnetic pogo pin connectors"))
+  (lib (name "OLED")(type "KiCad")(uri "${KIPRJMOD}/OLED.pretty")(options "")(descr "OLED display modules"))
+  (lib (name "Protoboard")(type "KiCad")(uri "${KIPRJMOD}/Protoboard.pretty")(options "")(descr "Protoboard holes"))
+)

@@ -1,0 +1,253 @@
+(footprint "OLED_0.66in_64x48_I2C_REA006448A"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "0.66 inch 64x48 OLED module, SSD1306, I2C, COG on 19.9x23.1mm PCB with 1x04 2.54mm pin header (Raystar REA006448A / Winstar WEA006448A), https://www.raystar-optronics.com/upload_files/oled-display/64x48-oled-graphic-display/REA006448A-datasheet.pdf")
+	(tags "OLED display 0.66 inch 64x48 SSD1306 I2C")
+	(property "Reference" "REF**"
+		(at 3.81 -2.8 0)
+		(layer "F.SilkS")
+		(uuid "687f0cc6-490a-4658-85b2-799131a34c06")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "OLED_0.66in_64x48_I2C_REA006448A"
+		(at 3.81 23.4 0)
+		(layer "F.Fab")
+		(uuid "a42dbd84-c5d6-4fbf-91d9-36316d096723")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.raystar-optronics.com/upload_files/oled-display/64x48-oled-graphic-display/REA006448A-datasheet.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dba621f8-6180-4924-9c1a-73e14ec27956")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "0.66 inch 64x48 OLED module, SSD1306, I2C, COG on 19.9x23.1mm PCB with 1x04 2.54mm pin header (Raystar REA006448A / Winstar WEA006448A)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e4ea67be-1beb-4378-a147-539acc19c1fd")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -6.25 -1.61)
+		(end 13.87 21.71)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "8abd1f49-54ec-4425-aa1d-78ffe8658077")
+	)
+	(fp_line
+		(start -6.55 -1.27)
+		(end -6.55 1.27)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8a4b5c35-b47b-4809-b65c-838a756d97cf")
+	)
+	(fp_rect
+		(start -6.39 -1.75)
+		(end 14.01 22.35)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "1b71e313-30d1-4cf1-be65-8467ded7dfd6")
+	)
+	(fp_rect
+		(start -6.14 -1.5)
+		(end 13.76 21.6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ac6dfe60-fb1a-4c97-a5b4-b306270f0f74")
+	)
+	(fp_rect
+		(start -5.42 1.5)
+		(end 13.04 19.6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "6415c84f-43ff-4e0f-8017-850f41035f4b")
+	)
+	(fp_rect
+		(start -2.19 21.6)
+		(end 9.81 22.1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "7ff781d6-ea0a-4d83-b77c-900574bc12fc")
+	)
+	(fp_rect
+		(start -3.9 2.6)
+		(end 11.52 14.66)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "47c5faaa-28d7-4e05-b418-f2c5ab0a344f")
+	)
+	(fp_rect
+		(start -2.9 3.6)
+		(end 10.52 13.66)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "55bd9cf7-e867-4603-ab61-adbe6e9c75fd")
+	)
+	(fp_text user "VA"
+		(at -2.7 3.3 0)
+		(layer "Dwgs.User")
+		(uuid "fcd7fcad-adb6-410c-a2bc-589bd80b5708")
+		(effects
+			(font
+				(size 0.6 0.6)
+				(thickness 0.09)
+			)
+		)
+	)
+	(fp_text user "AA 13.42x10.06"
+		(at 3.81 8.63 0)
+		(layer "Dwgs.User")
+		(uuid "c0ff1ffb-97a6-48ab-b74d-8b3b3ecd650a")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "GND"
+		(at 0 1.2 0)
+		(layer "F.Fab")
+		(uuid "c5c166b8-ebd7-47de-899c-e0f3c4f95e4f")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.08)
+			)
+		)
+	)
+	(fp_text user "VCC"
+		(at 2.54 1.2 0)
+		(layer "F.Fab")
+		(uuid "4351b6e6-2bec-4c90-a294-9de2ee941562")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.08)
+			)
+		)
+	)
+	(fp_text user "SCL"
+		(at 5.08 1.2 0)
+		(layer "F.Fab")
+		(uuid "5ef0ee8d-acaa-4f4d-bf8c-208b66836a2f")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.08)
+			)
+		)
+	)
+	(fp_text user "SDA"
+		(at 7.62 1.2 0)
+		(layer "F.Fab")
+		(uuid "8975aeb5-4c7d-4bfe-8b9d-502b102bb29a")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.08)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 3.81 18.1 0)
+		(layer "F.Fab")
+		(uuid "6687c030-6713-4ca9-8ecf-71c89aa51ddd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "22a30a36-10e3-447b-973d-2a8c2db2e939")
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dad36d5a-405b-40fd-bd67-3a14a3707a7f")
+	)
+	(pad "3" thru_hole circle
+		(at 5.08 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4bbb36d2-a51e-44ef-b991-486c33c219d3")
+	)
+	(pad "4" thru_hole circle
+		(at 7.62 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4f5e032a-3284-4109-86ba-0f0ce68c54bf")
+	)
+	(embedded_fonts no)
+)

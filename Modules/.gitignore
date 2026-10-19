@@ -1,0 +1,10 @@
+# Python
+.venv/
+__pycache__/
+# KiCad local history / locks / caches
+.history/
+*-backups/
+*.lck
+fp-info-cache
+# Large vendored 3D models (get from https://github.com/ebastler/marbastlib)
+5-MX-Switch-Module/marbastlib/3dmodels/
