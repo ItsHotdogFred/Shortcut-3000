@@ -12,6 +12,7 @@ The secret is using i2c for communication which allows it to hold 12 modules wit
 <img width="1406" height="1066" alt="image" src="https://github.com/user-attachments/assets/994c8bde-4f21-493b-9bcd-650dee2391b8" />
 
 <img width="2189" height="1186" alt="image" src="https://github.com/user-attachments/assets/ec7d7678-bf6d-4cdc-8c43-b70a159a1876" />
+
 | BOM Item | Footprint | Qty Needed | Source | Part / Listing | Part # / Link | Buy Qty | Unit Price | Line Total (NZD) | Shipping |
 |---|---|---|---|---|---|---:|---|---:|---|
 | 4.7k resistor | 0805 | 28 | LCSC | UNI-ROYAL 0805W8F4701T5E (C17673) | [Link](https://www.lcsc.com/product-detail/C17673.html) | 100 | US$0.0051 | 0.90 | Combined w/ JLC order |
