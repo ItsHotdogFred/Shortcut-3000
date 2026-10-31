@@ -1,5 +1,7 @@
 # Shortcut 3000
-Shortcut 3000 is an Elgato inspired shortcut device.But instead of being stuck with what is on the device. You're able to swap the buttons on it using magnets for other things like rotary encoders, screens, rgb really anything. There is also a module which is similar to a protoboard so you're able to create any module you want without needing to create a custom pcb for it
+
+Shortcut 3000 is a shortcut device which solves a big problem when buying a shortcut device. If you have already brought one before you may notice that some stuff on it go unused or aren't fit for your purpose. This leads to wasted space and wasted potential. 
+To avoid this happening, Shortcut 3000 contains 12 magnetic pogo pads called modules which allow you to swap stuff on it. For example: Got a key you're not using and would much rather have a rotary encoder for managing sound? Well you can do that by swapping the key module with a rotary encoder!
 
 <img width="1415" height="966" alt="image" src="https://github.com/user-attachments/assets/c9191d4e-ede5-42b4-b958-7b8bb4e6770e" />
 
